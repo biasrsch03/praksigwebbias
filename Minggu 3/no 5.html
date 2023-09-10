@@ -1,0 +1,32 @@
+<html>
+<head> 
+<title>Praktikum SIG WEB Minggu ke-3 Bias</title> 
+</head> 
+<body>
+    <h1>Bilangan Fibonacci</h1>
+    <p>Masukkan angka yang diinginkan </p>
+ <input type text="text" id="txtloop" />
+ <input type="button" id="btnEnter" value="Hitung" onclick="fibonacci_series(txtloop.value)" />
+
+	<p> Hasil : <span id="output"></span> </p>
+
+<script>
+var fibonacci_series = function (n) 
+{
+  if (n==1) {
+    var loop = [0, 1];
+    return loop;
+  } 
+
+  else {
+    var s = fibonacci_series(n - 1);
+    s.push(s[s.length - 1] + s[s.length - 2]);
+    document.getElementById("output").innerHTML =s;
+    return s;
+  }
+   
+};
+</script>
+
+</body>
+</html>
